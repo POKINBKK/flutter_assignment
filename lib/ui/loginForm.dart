@@ -67,6 +67,7 @@ class MyLoginFormState extends State<LoginForm> {
                 }
                 if(formState == 2 && uservalue == "admin" && passwordvalue == "admin"){
                   Navigator.pushNamed(context, "/");
+                  formState = 0;
                 }
               },
             ),
