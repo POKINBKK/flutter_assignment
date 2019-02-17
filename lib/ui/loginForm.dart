@@ -61,11 +61,11 @@ class MyLoginFormState extends State<LoginForm> {
                   _scaffoldKey.currentState.showSnackBar(SnackBar(content: Text("กรุณาระบุ user or password")));
                   formState = 0;
                 }
-                if(uservalue == "admin" && passwordvalue == "admin"){
+                if(uservalue != "admin" || passwordvalue != "admin"){
                   _scaffoldKey.currentState.showSnackBar(SnackBar(content: Text("user or password ไม่ถูกต้อง")));
                   formState = 0;
                 }
-                if(formState == 2){
+                if(formState == 2 && uservalue == "admin" && passwordvalue == "admin"){
                   Navigator.pushNamed(context, "/");
                 }
               },
